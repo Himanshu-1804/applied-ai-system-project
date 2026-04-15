@@ -13,14 +13,14 @@ flowchart TD
         D["score = 0"]
 
         E{"song.genre ==\nuser.genre?"}
-        F["score += 2.0"]
+        F["score += 1.0"]
         G["score += 0.0"]
 
         H{"song.mood ==\nuser.mood?"}
         I["score += 1.5"]
         J["score += 0.0"]
 
-        K["Energy Proximity\nscore += 1.00 * (1 - abs(user.energy - song.energy))"]
+        K["Energy Proximity\nscore += 2.00 * (1 - abs(user.energy - song.energy))"]
         L["Valence Proximity\nscore += 0.75 * (1 - abs(user.valence - song.valence))"]
         M["BPM Proximity\nscore += 0.50 * clamp(1 - abs(user.bpm - song.bpm) / 100)"]
         N["Danceability Proximity\nscore += 0.50 * (1 - abs(user.danceability - song.danceability))"]

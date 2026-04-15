@@ -11,9 +11,20 @@ Your goal is to:
 - Evaluate what your system gets right and wrong
 - Reflect on how this mirrors real world AI recommenders
 
-Replace this paragraph with your own summary of what your version does.
+- This system suggests songs from a small catalog based on what kind of music a user likes
+- It is for classroom use only, not for real music apps or real users
+- It assumes the user can describe their taste using things like energy level, mood, and genre
+- It should not be used to decide what music to promote, publish, or recommend at scale
 
 ![alt text](image.png)
+
+Edge Cases:
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
 
 ---
 
@@ -38,9 +49,9 @@ Explain your design in plain language.
 **How does the `Recommender` compute a score for each song?**
 
 - Every song in the catalog is scored independently using two steps:
-  - **Categorical match** — `+2.0` if genre matches, `+1.5` if mood matches
+  - **Categorical match** — `+1.0` if genre matches, `+1.5` if mood matches
   - **Numeric proximity** — for each numeric feature, compute `1 - abs(user_target - song_value)` and multiply by a weight:
-    - Energy: weight `1.00` (highest priority)
+    - Energy: weight `2.00` (highest priority)
     - Valence: weight `0.75`
     - Tempo BPM: weight `0.50` (normalized over a 100 BPM range)
     - Danceability: weight `0.50`
@@ -101,146 +112,114 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
-
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
-
----
+1. I tested eight different listener types, from normal ones like "happy pop fan" to weird ones like "someone who wants loud acoustic music."
+2. I checked if the songs that came out on top actually matched what the user asked for, and if the point breakdown made sense.
+3. A song with almost no acoustic quality still came out #1 for a user who specifically wanted acoustic music, because energy and mood points drowned out the mismatch.
+4. I ran all eight listener types through the system and watched how the rankings changed after making energy twice as important — only pop and lofi top results stayed the same, everything else shifted significantly.
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
-
-Examples:
-
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+1. Energy weight `2.00` locks users into a narrow energy band — a gap of `0.50` fully cancels the genre bonus, creating an inescapable filter bubble.
+2. 13 of 15 genres have only one song, so if that song loses on energy, the genre match is worthless and the user gets no real genre-based result.
+3. 11 of 14 moods map to a single song each — if that song has poor energy proximity, the `+1.5` mood bonus effectively disappears.
+4. No artist diversity check means the same artist can appear twice in the top 5, making results feel repetitive for the user.
+5. The BPM window divides by `100` but the catalog spans `108 BPM`, so songs at tempo extremes score zero even when they are the closest available match.
 
 ---
 
 ## Reflection
 
-Read and complete `model_card.md`:
-
 [**Model Card**](model_card.md)
 
-Write 1 to 2 paragraphs here about what you learned:
-
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
+- Building this showed that even a basic point system can produce surprisingly reasonable song picks.
+- My biggest learning moment in this project was understanding the complex mathematics behind the recommendation system. I am an avid math geek and this taught how it is implemented in complex large-scale recommendation systems.
+- The biggest surprise was how much one weight change (doubling energy) shifted almost every ranking across all profiles.
+- Using AI tools helped me a lot. I was successfully able to brainstorm, figure out where my recommendation system was lacking, and was also able to expand on my data set using AI. Some instances where I had to double-check AI's work would definitely be developing new specific user preferences, as initially it gave me extremely vague user preferences. I had to give it my own preferences as an example to enhance its output.
+- It made me realize that real apps like Spotify probably have hundreds of these weights, all carefully tuned behind the scenes.
+- If I were to extend this project, I would definitely make my recommendation more robust by including more parameters for judging a song, maybe even researching what are the main characteristics of a song, by looking at official documentation of platforms like Spotify and Apple Music. Drawing inspiration from them, I would want to include an enhanced AI DJ, which is powered by an AI voice — pretty much giving a "voice" to the recommendation system.
 
 ---
 
-## 7. `model_card_template.md`
+## 7. Model Card
 
-Combines reflection and model card framing from the Module 3 guidance. :contentReference[oaicite:2]{index=2}
-
-```markdown
-# 🎧 Model Card - Music Recommender Simulation
+# 🎧 Model Card: Music Recommender Simulation
 
 ## 1. Model Name
 
-Give your recommender a name, for example:
-
-> VibeFinder 1.0
+Give your model a short, descriptive name.
+Example: **Spoti5 v6.7**
 
 ---
 
 ## 2. Intended Use
 
-- What is this system trying to do
-- Who is it for
-
-Example:
-
-> This model suggests 3 to 5 songs from a small catalog based on a user's preferred genre, mood, and energy level. It is for classroom exploration only, not for real users.
+- This system suggests songs from a small catalog based on what kind of music a user likes
+- It is for classroom use only, not for real music apps or real users
+- It assumes the user can describe their taste using things like energy level, mood, and genre
+- It should not be used to decide what music to promote, publish, or recommend at scale
 
 ---
 
-## 3. How It Works (Short Explanation)
+## 3. How the Model Works
 
-Describe your scoring logic in plain language.
-
-- What features of each song does it consider
-- What information about the user does it use
-- How does it turn those into a number
-
-Try to avoid code in this section, treat it like an explanation to a non programmer.
+- Every song gets a score by comparing its features to what the user said they like
+- If the genre matches, the song gets +1 point; if the mood matches, it gets +1.5 points
+- Energy is the biggest number factor — the closer a song's energy is to the user's target, the more points it earns (up to 2 points)
+- Valence, tempo, danceability, and acousticness each add a smaller amount on top
+- All 18 songs are scored, sorted from highest to lowest, and the top ones are shown
 
 ---
 
 ## 4. Data
 
-Describe your dataset.
-
-- How many songs are in `data/songs.csv`
-- Did you add or remove any songs
-- What kinds of genres or moods are represented
-- Whose taste does this data mostly reflect
+- The catalog has 18 songs across 15 genres and 14 moods
+- Most genres and moods only have one song each, which limits how varied the results can be
+- No songs were added or removed from the original dataset
+- The data does not capture lyrics, language, cultural background, or artist popularity
 
 ---
 
 ## 5. Strengths
 
-Where does your recommender work well
-
-You can think about:
-
-- Situations where the top results "felt right"
-- Particular user profiles it served well
-- Simplicity or transparency benefits
+- Works best for pop and lofi users since those are the only genres with more than one song
+- When genre, mood, and energy all match, the top result feels obviously correct
+- The score breakdown shows exactly why each song was picked, which makes it easy to understand and trust
+- Simple, clear profiles like "happy pop" or "chill lofi" get near-perfect top results
 
 ---
 
 ## 6. Limitations and Bias
 
-Where does your recommender struggle
-
-Some prompts:
-
-- Does it ignore some genres or moods
-- Does it treat all users as if they have the same taste shape
-- Is it biased toward high energy or one genre by default
-- How could this be unfair if used in a real product
+1. Energy weight `2.00` locks users into a narrow energy band — a gap of `0.50` fully cancels the genre bonus, creating an inescapable filter bubble.
+2. 13 of 15 genres have only one song, so if that song loses on energy, the genre match is worthless and the user gets no real genre-based result.
+3. 11 of 14 moods map to a single song each — if that song has poor energy proximity, the `+1.5` mood bonus effectively disappears.
+4. No artist diversity check means the same artist can appear twice in the top 5, making results feel repetitive for the user.
+5. The BPM window divides by `100` but the catalog spans `108 BPM`, so songs at tempo extremes score zero even when they are the closest available match.
 
 ---
 
 ## 7. Evaluation
 
-How did you check your system
-
-Examples:
-
-- You tried multiple user profiles and wrote down whether the results matched your expectations
-- You compared your simulation to what a real app like Spotify or YouTube tends to recommend
-- You wrote tests for your scoring logic
-
-You do not need a numeric metric, but if you used one, explain what it measures.
+1. I tested eight different listener types, from normal ones like "happy pop fan" to weird ones like "someone who wants loud acoustic music."
+2. I checked if the songs that came out on top actually matched what the user asked for, and if the point breakdown made sense.
+3. A song with almost no acoustic quality still came out #1 for a user who specifically wanted acoustic music, because energy and mood points drowned out the mismatch.
+4. I ran all eight listener types through the system and watched how the rankings changed after making energy twice as important.
 
 ---
 
 ## 8. Future Work
 
-If you had more time, how would you improve this recommender
-
-Examples:
-
-- Add support for multiple users and "group vibe" recommendations
-- Balance diversity of songs instead of always picking the closest match
-- Use more features, like tempo ranges or lyric themes
+- Stop the same artist from showing up more than once in the top results
+- Expand the catalog so every genre and mood has at least 3–5 songs to choose from
+- Fix the BPM normalization to use the actual range of the catalog instead of a fixed window of 100
 
 ---
 
 ## 9. Personal Reflection
 
-A few sentences about what you learned:
-
-- What surprised you about how your system behaved
-- How did building this change how you think about real music recommenders
-- Where do you think human judgment still matters, even if the model seems "smart"
-```
+- Building this showed that even a basic point system can produce surprisingly reasonable song picks.
+- My biggest learning moment in this project was understanding the complex mathematics behind the recommendation system. I am an avid math geek and this taught how it is implemented in complex large-scale recommendation systems.
+- The biggest surprise was how much one weight change (doubling energy) shifted almost every ranking across all profiles.
+- Using AI tools helped me a lot. I was successfully able to brainstorm, figure out where my recommendation system was lacking, and was also able to expand on my data set using AI. Some instances where I had to double-check AI's work would definitely be developing new specific user preferences, as initially it gave me extremely vague user preferences. I had to give it my own preferences as an example to enhance its output.
+- It made me realize that real apps like Spotify probably have hundreds of these weights, all carefully tuned behind the scenes.
+- If I were to extend this project, I would definitely make my recommendation more robust by including more parameters for judging a song, maybe even researching what are the main characteristics of a song, by looking at official documentation of platforms like Spotify and Apple Music. Drawing inspiration from them, I would want to include an enhanced AI DJ, which is powered by an AI voice — pretty much giving a "voice" to the recommendation system that I would develop.
