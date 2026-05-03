@@ -1,5 +1,11 @@
 # AI Music Recommender, using RAG + Gemini
 
+## Demo
+
+[Watch the demo on Loom](https://www.loom.com/share/41ac76be9b404eab83a1050546e525c3)
+
+---
+
 ## Original Project (Module 3)
 
 The original project was the **Music Recommender Simulation**, a pure-Python classroom exercise built in Modules 1–3. Its goal was to represent songs and a user taste profile as structured data, then design a deterministic scoring rule that turned numeric feature comparisons into ranked recommendations. The system scored each of 18 songs against a hardcoded `UserProfile` using genre/mood categorical matches and weighted numeric proximity across energy, valence, tempo, danceability, and acousticness — with a maximum possible score of 6.50 points. It demonstrated that even a simple hand-crafted rule can produce surprisingly reasonable results, but was limited to 18 songs, 8 hardcoded demo profiles, and no natural language interface.
