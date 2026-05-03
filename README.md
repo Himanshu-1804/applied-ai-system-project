@@ -6,7 +6,7 @@ The original project was the **Music Recommender Simulation**, a pure-Python cla
 
 ---
 
-## Title and Summary
+## Summary of AI Music Recommender
 
 **AI Music Recommender** is a Retrieval-Augmented Generation (RAG) system that lets you describe music in plain English and receive a ranked list of song recommendations with an AI-generated explanation grounded in the actual retrieved data.
 
