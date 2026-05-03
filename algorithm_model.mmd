@@ -1,14 +1,27 @@
 flowchart TD
 
-    subgraph INPUT["INPUT — User Preferences"]
+    subgraph NL_INPUT["STEP 1 — Natural Language Input (Human)"]
+        A0["User types query\ne.g. 'chill music to study to'"]
+    end
+
+    subgraph PARSE["STEP 2 — Claude API Call #1: Parse Preferences"]
+        A1["parse_preferences(query)\nModel: claude-haiku-4-5-20251001"]
+        A2["Structured user_prefs dict\ngenre · mood · energy · valence · BPM..."]
+    end
+
+    subgraph GUARD["STEP 3 — Guardrails Validation"]
+        A3["validate_user_prefs(prefs)\nCheck float fields in [0.0, 1.0]\nCheck tempo in [40, 220]\nRaises ValueError on bad input"]
+    end
+
+    subgraph INPUT["STEP 4 — Validated User Preferences"]
         A["genre · mood · energy\nvalence · BPM · danceability · acousticness"]
     end
 
     subgraph SOURCE["DATA SOURCE"]
-        B["songs.csv\n18 songs"]
+        B["songs.csv — 18 songs"]
     end
 
-    subgraph PROCESS["PROCESS — Score Each Song"]
+    subgraph PROCESS["STEP 5 — RETRIEVAL: Score Each Song"]
         C["Pick Next Song from CSV"]
         D["score = 0"]
 
@@ -20,47 +33,63 @@ flowchart TD
         I["score += 1.5"]
         J["score += 0.0"]
 
-        K["Energy Proximity\nscore += 2.00 * (1 - abs(user.energy - song.energy))"]
-        L["Valence Proximity\nscore += 0.75 * (1 - abs(user.valence - song.valence))"]
-        M["BPM Proximity\nscore += 0.50 * clamp(1 - abs(user.bpm - song.bpm) / 100)"]
-        N["Danceability Proximity\nscore += 0.50 * (1 - abs(user.danceability - song.danceability))"]
-        O["Acousticness Proximity\nscore += 0.25 * (1 - abs(user.acousticness - song.acousticness))"]
+        K["Energy Proximity\nscore += 2.00 × clamp(1 − |user.energy − song.energy|)"]
+        L["Valence Proximity\nscore += 0.75 × clamp(1 − |user.valence − song.valence|)"]
+        M["BPM Proximity\nscore += 0.50 × clamp(1 − |user.bpm − song.bpm| / 100)"]
+        N["Danceability Proximity\nscore += 0.50 × clamp(1 − |user.dance − song.dance|)"]
+        O["Acousticness Proximity\nscore += 0.25 × clamp(1 − |user.acous − song.acous|)"]
 
-        P["Store (song, final_score)\nMax possible score = 6.5"]
+        P["Store (song, score, reasons)\nMax possible score = 6.50"]
 
-        Q{"More songs\nremaining in CSV?"}
+        Q{"More songs\nremaining?"}
     end
 
-    subgraph OUTPUT["OUTPUT — Ranked Recommendations"]
-        R["Sort all stored songs\nby score — descending"]
+    subgraph RETRIEVE["STEP 6 — Top K Retrieved Songs"]
+        R["Sort all songs by score — descending"]
         S["Slice Top K songs"]
-        T["Ranked Recommendation List"]
+        T["Ranked list: title · artist · genre · mood\nenergy · score · score breakdown"]
     end
+
+    subgraph EXPLAIN["STEP 7 — Claude API Call #2: Generate Explanation (RAG)"]
+        U["generate_rag_explanation(query, top_k_songs)\nModel: claude-haiku-4-5-20251001\nContext: original query + retrieved song attributes\nGrounded narrative — references specific titles & scores"]
+    end
+
+    subgraph OUTPUT["STEP 8 — Output to Human"]
+        V["Scored Table\nrank · title · score · breakdown"]
+        W["AI Narrative Explanation\nreferencing specific songs & attributes"]
+    end
+
+    subgraph RELIABILITY["RELIABILITY LAYER (always active)"]
+        LOG["Logger → stdout + recommender.log\nRecords query, top titles, scores"]
+        TESTS["pytest test suite\nConsistency · Regression · Validation\n(Human runs to verify invariants)"]
+    end
+
+    A0 --> A1
+    A1 --> A2
+    A2 --> A3
+    A3 --> A
 
     A --> C
     B --> C
-    C --> D
-    D --> E
+    C --> D --> E
 
-    E -- "Yes" --> F
-    E -- "No"  --> G
-    F --> H
-    G --> H
+    E -- "Yes" --> F --> H
+    E -- "No"  --> G --> H
 
-    H -- "Yes" --> I
-    H -- "No"  --> J
-    I --> K
-    J --> K
+    H -- "Yes" --> I --> K
+    H -- "No"  --> J --> K
 
-    K --> L
-    L --> M
-    M --> N
-    N --> O
-    O --> P
-
-    P --> Q
+    K --> L --> M --> N --> O --> P --> Q
     Q -- "Yes, loop back" --> C
-    Q -- "No"             --> R
+    Q -- "No"             --> R --> S --> T
 
-    R --> S
-    S --> T
+    T --> V
+    T --> U
+    A0 --> U
+    U --> W
+
+    V --> OUTPUT
+    W --> OUTPUT
+
+    OUTPUT --> LOG
+    TESTS -.->|"human checks\ncorrectness"| OUTPUT

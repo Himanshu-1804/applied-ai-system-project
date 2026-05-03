@@ -29,6 +29,24 @@ class UserProfile:
     target_energy: float
     likes_acoustic: bool
 
+def _song_to_dict(song: Song) -> Dict:
+    return {
+        "id": song.id, "title": song.title, "artist": song.artist,
+        "genre": song.genre, "mood": song.mood, "energy": song.energy,
+        "tempo_bpm": song.tempo_bpm, "valence": song.valence,
+        "danceability": song.danceability, "acousticness": song.acousticness,
+    }
+
+
+def _profile_to_prefs(user: UserProfile) -> Dict:
+    return {
+        "genre": user.favorite_genre,
+        "mood": user.favorite_mood,
+        "energy": user.target_energy,
+        "acousticness": 0.85 if user.likes_acoustic else 0.15,
+    }
+
+
 class Recommender:
     """
     OOP implementation of the recommendation logic.
@@ -38,12 +56,21 @@ class Recommender:
         self.songs = songs
 
     def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+        prefs = _profile_to_prefs(user)
+        scored = [
+            (song, score_song(prefs, _song_to_dict(song))[0])
+            for song in self.songs
+        ]
+        scored.sort(key=lambda x: x[1], reverse=True)
+        return [song for song, _ in scored[:k]]
 
     def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+        score, reasons = score_song(_profile_to_prefs(user), _song_to_dict(song))
+        return (
+            f'Why "{song.title}" was recommended:\n'
+            + "\n".join(f"  {r}" for r in reasons)
+            + f"\n  Total score: {score:.2f} / 6.50"
+        )
 
 def load_songs(csv_path: str) -> List[Dict]:
     """

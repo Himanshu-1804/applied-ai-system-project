@@ -1,0 +1,94 @@
+2026-05-02 22:25:07,907 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'Pop Happy' top results: ['Sunrise City', 'Rooftop Lights', 'Gym Hero', 'Brass & Bounce', 'Night Drive Loop']
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'Chill Lofi' top results: ['Midnight Coding', 'Library Rain', 'Spacewalk Thoughts', 'Focus Flow', 'Coffee Shop Stories']
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'Deep Intense Rock' top results: ['Storm Runner', 'Gym Hero', 'Iron Collapse', 'Drop Zone', 'Night Drive Loop']
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'Slow and Melodic' top results: ['Porch Light Lullaby', 'Spacewalk Thoughts', 'Coffee Shop Stories', 'Library Rain', 'Focus Flow']
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'High Energy Melancholic' top results: ['Rainy Season', 'Iron Collapse', 'Drop Zone', 'Storm Runner', 'Gym Hero']
+2026-05-02 22:25:07,907 [INFO] music_recommender: Demo profile 'Genre Not in Catalog' top results: ['Brass & Bounce', 'Golden Hour', 'Rooftop Lights', 'Sunrise City', 'Night Drive Loop']
+2026-05-02 22:25:07,908 [INFO] music_recommender: Demo profile 'Acoustic Banger' top results: ['Storm Runner', 'Gym Hero', 'Drop Zone', 'Iron Collapse', 'Porch Light Lullaby']
+2026-05-02 22:25:07,908 [INFO] music_recommender: Demo profile 'Perfectly Neutral' top results: ['Old Dirt Road', 'Midnight Coding', 'Rainy Season', 'Focus Flow', 'Golden Hour']
+2026-05-02 22:25:13,956 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:25:13,956 [INFO] music_recommender: Demo profile 'Pop Happy' top results: ['Sunrise City', 'Rooftop Lights', 'Gym Hero', 'Brass & Bounce', 'Night Drive Loop']
+2026-05-02 22:25:13,956 [INFO] music_recommender: Demo profile 'Chill Lofi' top results: ['Midnight Coding', 'Library Rain', 'Spacewalk Thoughts', 'Focus Flow', 'Coffee Shop Stories']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'Deep Intense Rock' top results: ['Storm Runner', 'Gym Hero', 'Iron Collapse', 'Drop Zone', 'Night Drive Loop']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'Slow and Melodic' top results: ['Porch Light Lullaby', 'Spacewalk Thoughts', 'Coffee Shop Stories', 'Library Rain', 'Focus Flow']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'High Energy Melancholic' top results: ['Rainy Season', 'Iron Collapse', 'Drop Zone', 'Storm Runner', 'Gym Hero']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'Genre Not in Catalog' top results: ['Brass & Bounce', 'Golden Hour', 'Rooftop Lights', 'Sunrise City', 'Night Drive Loop']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'Acoustic Banger' top results: ['Storm Runner', 'Gym Hero', 'Drop Zone', 'Iron Collapse', 'Porch Light Lullaby']
+2026-05-02 22:25:13,957 [INFO] music_recommender: Demo profile 'Perfectly Neutral' top results: ['Old Dirt Road', 'Midnight Coding', 'Rainy Season', 'Focus Flow', 'Golden Hour']
+2026-05-02 22:25:24,220 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:25:24,220 [INFO] music_recommender: User query: 'chill study music'
+2026-05-02 22:25:33,260 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:25:33,260 [INFO] music_recommender: User query: 'chill study music'
+2026-05-02 22:31:49,414 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Pop Happy' top results: ['Sunrise City', 'Rooftop Lights', 'Gym Hero', 'Brass & Bounce', 'Night Drive Loop']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Chill Lofi' top results: ['Midnight Coding', 'Library Rain', 'Spacewalk Thoughts', 'Focus Flow', 'Coffee Shop Stories']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Deep Intense Rock' top results: ['Storm Runner', 'Gym Hero', 'Iron Collapse', 'Drop Zone', 'Night Drive Loop']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Slow and Melodic' top results: ['Porch Light Lullaby', 'Spacewalk Thoughts', 'Coffee Shop Stories', 'Library Rain', 'Focus Flow']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'High Energy Melancholic' top results: ['Rainy Season', 'Iron Collapse', 'Drop Zone', 'Storm Runner', 'Gym Hero']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Genre Not in Catalog' top results: ['Brass & Bounce', 'Golden Hour', 'Rooftop Lights', 'Sunrise City', 'Night Drive Loop']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Acoustic Banger' top results: ['Storm Runner', 'Gym Hero', 'Drop Zone', 'Iron Collapse', 'Porch Light Lullaby']
+2026-05-02 22:31:49,415 [INFO] music_recommender: Demo profile 'Perfectly Neutral' top results: ['Old Dirt Road', 'Midnight Coding', 'Rainy Season', 'Focus Flow', 'Golden Hour']
+2026-05-02 22:31:49,867 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:31:49,867 [INFO] music_recommender: User query: 'chill study music'
+2026-05-02 22:33:48,978 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:33:48,979 [INFO] music_recommender: User query: 'chill study music'
+2026-05-02 22:34:24,870 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:34:31,364 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:34:51,826 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:34:53,403 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:35:10,932 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:35:12,505 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:36:36,783 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:36:38,804 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:36:38,881 [DEBUG] music_recommender: Parsing preferences for query: 'Happy'
+2026-05-02 22:41:32,884 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:41:34,703 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:41:34,769 [DEBUG] music_recommender: Parsing preferences for query: 'Happy'
+2026-05-02 22:43:07,691 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:43:07,691 [INFO] music_recommender: User query: 'Happy upbeat music for a workout'
+2026-05-02 22:43:07,717 [DEBUG] music_recommender: Parsing preferences for query: 'Happy upbeat music for a workout'
+2026-05-02 22:43:09,289 [DEBUG] music_recommender: Raw parse response: {"mood": "happy", "energy": 0.85, "valence": 0.9}
+2026-05-02 22:43:09,289 [INFO] music_recommender: Parsed preferences: {'mood': 'happy', 'energy': 0.85, 'valence': 0.9}
+2026-05-02 22:43:09,292 [INFO] music_recommender: Top results for 'Happy upbeat music for a workout': ['Sunrise City', 'Rooftop Lights', 'Brass & Bounce', 'Gym Hero', 'Drop Zone'], scores=[4.14, 4.0, 2.65, 2.49, 2.37]
+2026-05-02 22:43:09,314 [DEBUG] music_recommender: Generating RAG explanation for query: 'Happy upbeat music for a workout'
+2026-05-02 22:43:11,849 [INFO] music_recommender: RAG explanation generated (69 chars)
+2026-05-02 22:44:15,544 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:44:15,544 [INFO] music_recommender: User query: 'Happy upbeat music for a workout'
+2026-05-02 22:44:15,579 [DEBUG] music_recommender: Parsing preferences for query: 'Happy upbeat music for a workout'
+2026-05-02 22:44:16,300 [DEBUG] music_recommender: Raw parse response: {"mood": "energetic", "energy": 0.9, "valence": 0.8}
+2026-05-02 22:44:16,300 [INFO] music_recommender: Parsed preferences: {'mood': 'energetic', 'energy': 0.9, 'valence': 0.8}
+2026-05-02 22:44:16,302 [INFO] music_recommender: Top results for 'Happy upbeat music for a workout': ['Drop Zone', 'Gym Hero', 'Sunrise City', 'Storm Runner', 'Brass & Bounce'], scores=[4.05, 2.67, 2.56, 2.49, 2.48]
+2026-05-02 22:44:16,317 [DEBUG] music_recommender: Generating RAG explanation for query: 'Happy upbeat music for a workout'
+2026-05-02 22:44:17,883 [INFO] music_recommender: RAG explanation generated (635 chars)
+2026-05-02 22:44:27,187 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:44:28,591 [INFO] music_recommender: User query: 'Happy'
+2026-05-02 22:44:28,642 [DEBUG] music_recommender: Parsing preferences for query: 'Happy'
+2026-05-02 22:44:29,404 [DEBUG] music_recommender: Raw parse response: {"mood": "happy", "valence": 1.0}
+2026-05-02 22:44:29,405 [INFO] music_recommender: Parsed preferences: {'mood': 'happy', 'valence': 1.0}
+2026-05-02 22:44:29,407 [INFO] music_recommender: Top results for 'Happy': ['Sunrise City', 'Rooftop Lights', 'Brass & Bounce', 'Gym Hero', 'Golden Hour'], scores=[2.13, 2.11, 0.68, 0.58, 0.58]
+2026-05-02 22:44:29,431 [DEBUG] music_recommender: Generating RAG explanation for query: 'Happy'
+2026-05-02 22:44:30,699 [INFO] music_recommender: RAG explanation generated (644 chars)
+2026-05-02 22:44:35,272 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:44:39,935 [INFO] music_recommender: User query: 'Anuv Jain'
+2026-05-02 22:44:39,997 [DEBUG] music_recommender: Parsing preferences for query: 'Anuv Jain'
+2026-05-02 22:44:40,838 [DEBUG] music_recommender: Raw parse response: {}
+2026-05-02 22:44:40,839 [INFO] music_recommender: Parsed preferences: {}
+2026-05-02 22:44:40,841 [INFO] music_recommender: Top results for 'Anuv Jain': ['Sunrise City', 'Midnight Coding', 'Storm Runner', 'Library Rain', 'Gym Hero'], scores=[0.0, 0.0, 0.0, 0.0, 0.0]
+2026-05-02 22:44:40,868 [DEBUG] music_recommender: Generating RAG explanation for query: 'Anuv Jain'
+2026-05-02 22:45:22,783 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:45:24,514 [INFO] music_recommender: User query: 'hashjas'
+2026-05-02 22:45:24,598 [DEBUG] music_recommender: Parsing preferences for query: 'hashjas'
+2026-05-02 22:45:25,177 [DEBUG] music_recommender: Raw parse response: {}
+2026-05-02 22:45:25,178 [INFO] music_recommender: Parsed preferences: {}
+2026-05-02 22:45:25,181 [INFO] music_recommender: Top results for 'hashjas': ['Sunrise City', 'Midnight Coding', 'Storm Runner', 'Library Rain', 'Gym Hero'], scores=[0.0, 0.0, 0.0, 0.0, 0.0]
+2026-05-02 22:45:25,209 [DEBUG] music_recommender: Generating RAG explanation for query: 'hashjas'
+2026-05-02 22:45:26,817 [INFO] music_recommender: RAG explanation generated (612 chars)
+2026-05-02 22:45:34,932 [INFO] music_recommender: Loaded 18 songs from catalog
+2026-05-02 22:45:37,029 [INFO] music_recommender: User query: 'Anuv Jain'
+2026-05-02 22:45:37,084 [DEBUG] music_recommender: Parsing preferences for query: 'Anuv Jain'
+2026-05-02 22:45:37,670 [DEBUG] music_recommender: Raw parse response: {}
+2026-05-02 22:45:37,671 [INFO] music_recommender: Parsed preferences: {}
+2026-05-02 22:45:37,674 [INFO] music_recommender: Top results for 'Anuv Jain': ['Sunrise City', 'Midnight Coding', 'Storm Runner', 'Library Rain', 'Gym Hero'], scores=[0.0, 0.0, 0.0, 0.0, 0.0]
+2026-05-02 22:45:37,702 [DEBUG] music_recommender: Generating RAG explanation for query: 'Anuv Jain'
+2026-05-02 22:45:38,797 [INFO] music_recommender: RAG explanation generated (419 chars)
