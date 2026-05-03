@@ -1,95 +1,98 @@
 flowchart TD
 
-    subgraph NL_INPUT["STEP 1 — Natural Language Input (Human)"]
-        A0["User types query\ne.g. 'chill music to study to'"]
+    %% ── INPUT ────────────────────────────────────────────────────────────────
+    subgraph HUMAN_IN["👤  Human Input"]
+        Q["Natural language query"]
+        IFACE["CLI  ·  Streamlit UI"]
     end
 
-    subgraph PARSE["STEP 2 — Claude API Call #1: Parse Preferences"]
-        A1["parse_preferences(query)\nModel: claude-haiku-4-5-20251001"]
-        A2["Structured user_prefs dict\ngenre · mood · energy · valence · BPM..."]
+    %% ── PARSE ────────────────────────────────────────────────────────────────
+    subgraph PARSE_AGENT["🤖  Parse Agent  —  Gemini 3 Flash  (API Call 1)"]
+        PARSE_FN["parse_preferences()"]
+        PREFS["genre · mood · energy · valence · BPM"]
     end
 
-    subgraph GUARD["STEP 3 — Guardrails Validation"]
-        A3["validate_user_prefs(prefs)\nCheck float fields in [0.0, 1.0]\nCheck tempo in [40, 220]\nRaises ValueError on bad input"]
+    %% ── HUMAN REVIEW ①  ──────────────────────────────────────────────────────
+    HCHECK(["👤  Review ①\nVerify parsed prefs — re-query if wrong"])
+
+    %% ── GUARDRAILS ───────────────────────────────────────────────────────────
+    subgraph GUARDRAILS["🛡️  Guardrails  ·  src/guardrails.py"]
+        VALID["validate_user_prefs()\n30 genres · 14 moods · numeric ranges"]
+        WARN["⚠️  Invalid field stripped"]
     end
 
-    subgraph INPUT["STEP 4 — Validated User Preferences"]
-        A["genre · mood · energy\nvalence · BPM · danceability · acousticness"]
+    %% ── RETRIEVAL ────────────────────────────────────────────────────────────
+    subgraph RETRIEVAL["⚙️  Retrieval Engine  ·  src/recommender.py"]
+        CATALOG[("📁  songs.csv\n203 songs · 30 genres")]
+        SCORER["score_song()\n7-factor weighted score  ·  max 6.50 pts"]
+        RECOMMENDER["recommend_songs()\nAll 203 songs scored → Top 5"]
+        TOP5["Ranked results + per-factor breakdown"]
     end
 
-    subgraph SOURCE["DATA SOURCE"]
-        B["songs.csv — 18 songs"]
+    %% ── RAG EXPLAIN ──────────────────────────────────────────────────────────
+    subgraph RAG["🤖  Explain Agent  —  Gemini 3 Flash  (API Call 2  ·  RAG)"]
+        RESCORE["Re-score top 5 → List of reason strings"]
+        EXPLAIN["generate_rag_explanation()\nContext: query + retrieved songs + scores"]
+        STORY["Grounded 3–5 sentence narrative"]
     end
 
-    subgraph PROCESS["STEP 5 — RETRIEVAL: Score Each Song"]
-        C["Pick Next Song from CSV"]
-        D["score = 0"]
-
-        E{"song.genre ==\nuser.genre?"}
-        F["score += 1.0"]
-        G["score += 0.0"]
-
-        H{"song.mood ==\nuser.mood?"}
-        I["score += 1.5"]
-        J["score += 0.0"]
-
-        K["Energy Proximity\nscore += 2.00 × clamp(1 − |user.energy − song.energy|)"]
-        L["Valence Proximity\nscore += 0.75 × clamp(1 − |user.valence − song.valence|)"]
-        M["BPM Proximity\nscore += 0.50 × clamp(1 − |user.bpm − song.bpm| / 100)"]
-        N["Danceability Proximity\nscore += 0.50 × clamp(1 − |user.dance − song.dance|)"]
-        O["Acousticness Proximity\nscore += 0.25 × clamp(1 − |user.acous − song.acous|)"]
-
-        P["Store (song, score, reasons)\nMax possible score = 6.50"]
-
-        Q{"More songs\nremaining?"}
+    %% ── OUTPUT ───────────────────────────────────────────────────────────────
+    subgraph OUTPUT["👤  Output  &  Evaluation"]
+        TABLE["Ranked Table  ·  #1–5 · Score · Breakdown"]
+        TEXT["AI DJ Explanation"]
+        EVAL(["👤  Evaluate ②\nRe-query if unsatisfied"])
     end
 
-    subgraph RETRIEVE["STEP 6 — Top K Retrieved Songs"]
-        R["Sort all songs by score — descending"]
-        S["Slice Top K songs"]
-        T["Ranked list: title · artist · genre · mood\nenergy · score · score breakdown"]
+    %% ── TESTING & RELIABILITY ────────────────────────────────────────────────
+    subgraph RELIABILITY["🧪  Testing  &  Reliability"]
+        LOG["📝  Logger\nstdout  ·  recommender.log"]
+        T1["✅  Consistency"]
+        T2["✅  Score Regression"]
+        T3["✅  Validate Energy"]
+        T4["✅  Validate Valence"]
+        T5["✅  Validate Accept"]
+        T6["✅  OOP Returns k"]
+        T7["✅  OOP Ranks by Score"]
+        DEV(["👤  Dev runs pytest  ③"])
     end
 
-    subgraph EXPLAIN["STEP 7 — Claude API Call #2: Generate Explanation (RAG)"]
-        U["generate_rag_explanation(query, top_k_songs)\nModel: claude-haiku-4-5-20251001\nContext: original query + retrieved song attributes\nGrounded narrative — references specific titles & scores"]
-    end
+    %% ── PRIMARY DATA FLOW ────────────────────────────────────────────────────
+    Q --> IFACE --> PARSE_FN --> PREFS
+    PREFS -->|"Displayed to user"| HCHECK
+    HCHECK -->|"Correct"| VALID
+    HCHECK -->|"Wrong — re-enter"| Q
+    VALID -->|"Passes"| RECOMMENDER
+    VALID -->|"ValueError"| WARN --> RECOMMENDER
+    CATALOG --> SCORER --> RECOMMENDER --> TOP5
+    TOP5 --> TABLE
+    TOP5 --> RESCORE --> EXPLAIN --> STORY
+    Q -.->|"Original query"| EXPLAIN
+    TABLE --> TEXT
+    STORY --> TEXT --> EVAL
+    EVAL -->|"Re-query"| Q
 
-    subgraph OUTPUT["STEP 8 — Output to Human"]
-        V["Scored Table\nrank · title · score · breakdown"]
-        W["AI Narrative Explanation\nreferencing specific songs & attributes"]
-    end
+    %% ── LOGGING SIDE-CHANNEL ─────────────────────────────────────────────────
+    PARSE_FN -.-> LOG
+    RECOMMENDER -.-> LOG
+    EXPLAIN -.-> LOG
 
-    subgraph RELIABILITY["RELIABILITY LAYER (always active)"]
-        LOG["Logger → stdout + recommender.log\nRecords query, top titles, scores"]
-        TESTS["pytest test suite\nConsistency · Regression · Validation\n(Human runs to verify invariants)"]
-    end
+    %% ── TESTING HOOKS ────────────────────────────────────────────────────────
+    T1 & T6 & T7 -.->|"verify"| RECOMMENDER
+    T2 -.->|"verify"| SCORER
+    T3 & T4 & T5 -.->|"verify"| VALID
+    DEV -->|"runs"| T1 & T2 & T3 & T4 & T5 & T6 & T7
 
-    A0 --> A1
-    A1 --> A2
-    A2 --> A3
-    A3 --> A
+    %% ── STYLES ───────────────────────────────────────────────────────────────
+    classDef human  fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a
+    classDef llm    fill:#ede9fe,stroke:#8b5cf6,stroke-width:2px,color:#4c1d95
+    classDef engine fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#14532d
+    classDef data   fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#713f12
+    classDef guard  fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#7f1d1d
+    classDef test   fill:#ccfbf1,stroke:#14b8a6,stroke-width:2px,color:#134e4a
 
-    A --> C
-    B --> C
-    C --> D --> E
-
-    E -- "Yes" --> F --> H
-    E -- "No"  --> G --> H
-
-    H -- "Yes" --> I --> K
-    H -- "No"  --> J --> K
-
-    K --> L --> M --> N --> O --> P --> Q
-    Q -- "Yes, loop back" --> C
-    Q -- "No"             --> R --> S --> T
-
-    T --> V
-    T --> U
-    A0 --> U
-    U --> W
-
-    V --> OUTPUT
-    W --> OUTPUT
-
-    OUTPUT --> LOG
-    TESTS -.->|"human checks\ncorrectness"| OUTPUT
+    class Q,IFACE,HCHECK,EVAL,DEV human
+    class PARSE_FN,PREFS,EXPLAIN,STORY,RESCORE llm
+    class SCORER,RECOMMENDER,TOP5 engine
+    class CATALOG data
+    class VALID,WARN guard
+    class T1,T2,T3,T4,T5,T6,T7,LOG test

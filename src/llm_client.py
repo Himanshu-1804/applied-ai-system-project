@@ -10,14 +10,16 @@ from dotenv import load_dotenv
 
 logger = logging.getLogger("music_recommender")
 
-_MODEL = "gemini-2.5-flash"
+_MODEL = "gemini-3-flash-preview"
 
 _PARSE_SYSTEM = """\
 You are a music preference parser. Your only job is to convert a natural \
 language music request into a structured JSON object.
 
 Valid genres: pop, lofi, rock, folk, ambient, jazz, synthwave, indie pop, \
-hip-hop, edm, classical, r&b, country, metal, funk
+hip-hop, edm, classical, r&b, country, metal, funk, bollywood, latin, soul, \
+blues, reggae, k-pop, afrobeats, bossa nova, disco, gospel, neo-soul, trap, \
+j-pop, indie rock, dancehall
 
 Valid moods: happy, chill, intense, dreamy, melancholic, energetic, peaceful, \
 romantic, nostalgic, angry, uplifting, focused, relaxed, moody

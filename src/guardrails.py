@@ -6,6 +6,9 @@ VALID_GENRES = {
     "pop", "lofi", "rock", "folk", "ambient", "jazz",
     "synthwave", "indie pop", "hip-hop", "edm",
     "classical", "r&b", "country", "metal", "funk",
+    "bollywood", "latin", "soul", "blues", "reggae", "k-pop",
+    "afrobeats", "bossa nova", "disco", "gospel", "neo-soul",
+    "trap", "j-pop", "indie rock", "dancehall",
 }
 
 VALID_MOODS = {

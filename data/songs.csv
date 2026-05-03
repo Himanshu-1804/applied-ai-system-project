@@ -17,3 +17,188 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 16,Iron Collapse,Threshold Nine,metal,angry,0.98,168,0.22,0.52,0.04
 17,Porch Light Lullaby,Wren & Hollow,folk,dreamy,0.33,82,0.68,0.45,0.91
 18,Brass & Bounce,The Goldenaires,funk,uplifting,0.80,108,0.90,0.87,0.28
+19,Blinding Lights,The Weeknd,pop,energetic,0.80,171,0.47,0.51,0.00
+20,As It Was,Harry Styles,pop,melancholic,0.73,88,0.55,0.80,0.07
+21,Levitating,Dua Lipa,pop,uplifting,0.82,103,0.84,0.83,0.03
+22,Anti-Hero,Taylor Swift,pop,moody,0.59,97,0.48,0.65,0.12
+23,Study Session,ChillHop,lofi,focused,0.30,75,0.53,0.55,0.84
+24,Rainy Day Beats,Jinsang,lofi,chill,0.26,70,0.50,0.52,0.90
+25,Late Night Tape,L'indecis,lofi,dreamy,0.38,82,0.62,0.60,0.75
+26,Bohemian Rhapsody,Queen,rock,intense,0.83,140,0.50,0.48,0.18
+27,Mr. Brightside,The Killers,rock,energetic,0.85,148,0.60,0.70,0.08
+28,Smells Like Teen Spirit,Nirvana,rock,angry,0.90,117,0.35,0.62,0.04
+29,Hotel California,Eagles,rock,moody,0.62,74,0.46,0.57,0.32
+30,HUMBLE.,Kendrick Lamar,hip-hop,intense,0.78,150,0.42,0.72,0.05
+31,God's Plan,Drake,hip-hop,uplifting,0.62,77,0.71,0.71,0.03
+32,Sicko Mode,Travis Scott,hip-hop,energetic,0.88,155,0.48,0.68,0.04
+33,Stronger,Kanye West,hip-hop,energetic,0.79,104,0.58,0.71,0.08
+34,Levels,Avicii,edm,energetic,0.90,126,0.78,0.85,0.03
+35,Animals,Martin Garrix,edm,intense,0.92,128,0.55,0.78,0.03
+36,Titanium,David Guetta ft. Sia,edm,uplifting,0.75,126,0.68,0.72,0.05
+37,Blue,Eiffel 65,edm,happy,0.82,138,0.74,0.80,0.02
+38,Take Five,Dave Brubeck Quartet,jazz,relaxed,0.30,87,0.62,0.42,0.90
+39,So What,Miles Davis,jazz,chill,0.28,68,0.58,0.40,0.92
+40,Fly Me to the Moon,Frank Sinatra,jazz,romantic,0.45,108,0.78,0.60,0.85
+41,Moonlight Sonata,Ludwig van Beethoven,classical,melancholic,0.15,58,0.22,0.25,0.99
+42,Canon in D,Johann Pachelbel,classical,peaceful,0.20,104,0.72,0.35,0.98
+43,Spring from Four Seasons,Antonio Vivaldi,classical,energetic,0.65,144,0.80,0.42,0.96
+44,Thinking Out Loud,Ed Sheeran,r&b,romantic,0.48,79,0.78,0.70,0.45
+45,No Scrubs,TLC,r&b,moody,0.63,96,0.55,0.76,0.10
+46,Adorn,Miguel,r&b,romantic,0.55,102,0.72,0.68,0.25
+47,Friends in Low Places,Garth Brooks,country,happy,0.68,104,0.82,0.72,0.68
+48,Before He Cheats,Carrie Underwood,country,angry,0.75,98,0.38,0.62,0.42
+49,Fast Car,Tracy Chapman,country,nostalgic,0.52,106,0.55,0.62,0.75
+50,The Sound of Silence,Simon & Garfunkel,folk,melancholic,0.22,80,0.28,0.35,0.92
+51,Ho Hey,The Lumineers,folk,happy,0.65,108,0.80,0.72,0.78
+52,Wagon Wheel,Old Crow Medicine Show,folk,uplifting,0.70,108,0.84,0.78,0.72
+53,Enter Sandman,Metallica,metal,intense,0.95,124,0.30,0.55,0.03
+54,Paranoid,Black Sabbath,metal,angry,0.93,164,0.35,0.62,0.05
+55,Highway to Hell,AC/DC,metal,energetic,0.88,116,0.55,0.68,0.05
+56,Uptown Funk,Bruno Mars,funk,happy,0.92,115,0.88,0.92,0.05
+57,Get Lucky,Daft Punk,funk,uplifting,0.78,116,0.82,0.85,0.05
+58,Superstition,Stevie Wonder,funk,energetic,0.82,102,0.75,0.88,0.08
+59,Weightless,Marconi Union,ambient,peaceful,0.15,65,0.45,0.25,0.95
+60,Music for Airports,Brian Eno,ambient,peaceful,0.10,55,0.50,0.20,0.98
+61,Watermark,Enya,ambient,dreamy,0.25,76,0.65,0.35,0.90
+62,Midnight City,M83,synthwave,energetic,0.80,105,0.72,0.70,0.05
+63,Nightcall,Kavinsky,synthwave,moody,0.65,113,0.40,0.65,0.08
+64,A Real Hero,College ft. Electric Youth,synthwave,dreamy,0.55,118,0.68,0.62,0.15
+65,Do I Wanna Know,Arctic Monkeys,indie pop,moody,0.72,85,0.38,0.60,0.08
+66,Electric Feel,MGMT,indie pop,uplifting,0.78,108,0.80,0.78,0.12
+67,Somebody That I Used to Know,Gotye,indie pop,melancholic,0.58,129,0.45,0.62,0.52
+68,Kesariya,Arijit Singh,bollywood,romantic,0.55,112,0.75,0.65,0.40
+69,Chaiyya Chaiyya,A.R. Rahman,bollywood,energetic,0.85,138,0.80,0.88,0.15
+70,Tum Hi Ho,Arijit Singh,bollywood,romantic,0.35,72,0.65,0.45,0.70
+71,Jai Ho,A.R. Rahman,bollywood,uplifting,0.82,130,0.85,0.85,0.10
+72,Dilbar,Neha Kakkar,bollywood,energetic,0.90,135,0.75,0.95,0.05
+73,Kal Ho Naa Ho,Sonu Nigam,bollywood,nostalgic,0.55,95,0.70,0.55,0.55
+74,Balam Pichkari,Vishal-Shekhar,bollywood,happy,0.88,128,0.90,0.90,0.08
+75,Ghungroo,Arijit Singh & Shilpa Rao,bollywood,intense,0.87,132,0.78,0.92,0.07
+76,Raabta,Pritam,bollywood,dreamy,0.50,100,0.72,0.60,0.45
+77,Swag Se Swagat,Vishal-Shekhar,bollywood,intense,0.88,130,0.72,0.88,0.08
+78,Despacito,Luis Fonsi ft. Daddy Yankee,latin,uplifting,0.80,89,0.82,0.88,0.28
+79,Hips Don't Lie,Shakira,latin,happy,0.85,100,0.88,0.90,0.08
+80,Mi Gente,J Balvin,latin,energetic,0.88,103,0.78,0.92,0.05
+81,Respect,Aretha Franklin,soul,uplifting,0.82,114,0.85,0.82,0.15
+82,Whats Going On,Marvin Gaye,soul,melancholic,0.42,100,0.55,0.65,0.45
+83,A Change Is Gonna Come,Sam Cooke,soul,nostalgic,0.38,78,0.52,0.48,0.68
+84,The Thrill Is Gone,B.B. King,blues,melancholic,0.40,72,0.38,0.55,0.72
+85,Sweet Home Chicago,Robert Johnson,blues,nostalgic,0.62,120,0.55,0.72,0.88
+86,Pride and Joy,Stevie Ray Vaughan,blues,energetic,0.75,128,0.62,0.78,0.65
+87,No Woman No Cry,Bob Marley,reggae,chill,0.52,75,0.68,0.65,0.62
+88,One Love,Bob Marley,reggae,uplifting,0.58,79,0.85,0.72,0.55
+89,Redemption Song,Bob Marley,reggae,peaceful,0.28,76,0.62,0.45,0.92
+90,Dynamite,BTS,k-pop,happy,0.80,114,0.88,0.85,0.05
+91,Kill This Love,BLACKPINK,k-pop,intense,0.88,148,0.52,0.82,0.04
+92,Butter,BTS,k-pop,uplifting,0.75,110,0.82,0.82,0.06
+93,Shape of You,Ed Sheeran,pop,uplifting,0.65,96,0.93,0.83,0.58
+94,Bad Guy,Billie Eilish,pop,moody,0.43,135,0.56,0.70,0.18
+95,Watermelon Sugar,Harry Styles,pop,happy,0.82,95,0.81,0.56,0.27
+96,Stay,The Kid LAROI & Justin Bieber,pop,melancholic,0.59,170,0.52,0.70,0.07
+97,Sweet Child O' Mine,Guns N' Roses,rock,intense,0.79,125,0.70,0.62,0.08
+98,Creep,Radiohead,rock,melancholic,0.55,92,0.35,0.45,0.12
+99,Wonderwall,Oasis,rock,nostalgic,0.55,87,0.60,0.45,0.62
+100,Don't Stop Believin',Journey,rock,uplifting,0.80,118,0.78,0.65,0.12
+101,Lose Yourself,Eminem,hip-hop,intense,0.85,171,0.42,0.72,0.03
+102,Alright,Kendrick Lamar,hip-hop,uplifting,0.60,95,0.65,0.70,0.08
+103,Empire State of Mind,Jay-Z ft. Alicia Keys,hip-hop,uplifting,0.65,92,0.75,0.65,0.12
+104,Wake Me Up,Avicii,edm,uplifting,0.72,124,0.82,0.72,0.28
+105,Lean On,Major Lazer ft. MO & DJ Snake,edm,uplifting,0.78,98,0.78,0.82,0.08
+106,Clarity,Zedd ft. Foxes,edm,energetic,0.85,128,0.62,0.78,0.05
+107,Scary Monsters and Nice Sprites,Skrillex,edm,intense,0.95,140,0.38,0.72,0.02
+108,The Night We Met,Lord Huron,folk,melancholic,0.32,100,0.28,0.40,0.72
+109,Dust in the Wind,Kansas,folk,melancholic,0.28,96,0.38,0.35,0.88
+110,Take Me Home Country Roads,John Denver,folk,nostalgic,0.65,115,0.80,0.68,0.75
+111,Blackbird,The Beatles,folk,peaceful,0.25,96,0.72,0.40,0.95
+112,What a Wonderful World,Louis Armstrong,jazz,peaceful,0.20,88,0.85,0.40,0.90
+113,Autumn Leaves,Bill Evans,jazz,melancholic,0.32,80,0.40,0.42,0.92
+114,Summertime,Ella Fitzgerald,jazz,dreamy,0.28,65,0.55,0.38,0.90
+115,An Ending (Ascent),Brian Eno,ambient,peaceful,0.08,58,0.60,0.18,0.98
+116,Comptine d'un autre ete,Yann Tiersen,ambient,nostalgic,0.20,76,0.55,0.25,0.97
+117,Experience,Ludovico Einaudi,ambient,peaceful,0.15,52,0.65,0.22,0.97
+118,Blue Monday,New Order,synthwave,moody,0.70,129,0.35,0.72,0.05
+119,Enjoy the Silence,Depeche Mode,synthwave,melancholic,0.65,112,0.35,0.65,0.08
+120,Cars,Gary Numan,synthwave,moody,0.55,110,0.38,0.58,0.12
+121,Clair de Lune,Claude Debussy,classical,dreamy,0.12,66,0.58,0.22,0.99
+122,Ode to Joy,Ludwig van Beethoven,classical,uplifting,0.55,110,0.85,0.38,0.98
+123,Nocturne in E-flat,Frederic Chopin,classical,romantic,0.18,62,0.65,0.25,0.99
+124,Gymnopedie No. 1,Erik Satie,classical,peaceful,0.12,60,0.60,0.22,0.99
+125,Say My Name,Destiny's Child,r&b,energetic,0.78,120,0.68,0.82,0.10
+126,Crazy in Love,Beyonce,r&b,intense,0.88,100,0.75,0.88,0.05
+127,Best Part,Daniel Caesar ft. H.E.R.,r&b,romantic,0.42,90,0.72,0.52,0.55
+128,Redbone,Childish Gambino,r&b,dreamy,0.45,96,0.68,0.65,0.28
+129,Jolene,Dolly Parton,country,melancholic,0.45,124,0.35,0.55,0.78
+130,Ring of Fire,Johnny Cash,country,intense,0.75,148,0.55,0.70,0.55
+131,Tennessee Whiskey,Chris Stapleton,country,romantic,0.48,68,0.72,0.55,0.68
+132,Master of Puppets,Metallica,metal,intense,0.97,212,0.25,0.45,0.02
+133,Chop Suey!,System of a Down,metal,angry,0.95,174,0.30,0.52,0.03
+134,Numb,Linkin Park,metal,melancholic,0.82,109,0.32,0.58,0.04
+135,I Got You (I Feel Good),James Brown,funk,happy,0.88,132,0.92,0.88,0.10
+136,Give It to Me Baby,Rick James,funk,uplifting,0.80,112,0.85,0.85,0.12
+137,Bailando,Enrique Iglesias ft. Descemer Bueno,latin,energetic,0.82,96,0.85,0.88,0.12
+138,La Bamba,Los Lobos,latin,happy,0.85,160,0.88,0.85,0.25
+139,Macarena,Los Del Rio,latin,uplifting,0.78,104,0.82,0.90,0.12
+140,Try a Little Tenderness,Otis Redding,soul,romantic,0.55,72,0.68,0.58,0.45
+141,I Will Always Love You,Whitney Houston,soul,romantic,0.58,66,0.75,0.50,0.45
+142,Stand By Me,Ben E. King,soul,nostalgic,0.48,122,0.72,0.58,0.55
+143,Cross Road Blues,Robert Johnson,blues,melancholic,0.55,118,0.35,0.60,0.82
+144,Mannish Boy,Muddy Waters,blues,energetic,0.72,116,0.55,0.72,0.75
+145,Could You Be Loved,Bob Marley,reggae,uplifting,0.65,113,0.80,0.72,0.55
+146,Pressure Drop,Toots & The Maytals,reggae,chill,0.55,88,0.70,0.65,0.60
+147,Agar Tum Saath Ho,Arijit Singh & Alka Yagnik,bollywood,melancholic,0.38,70,0.42,0.42,0.62
+148,Bulleya,Amit Mishra,bollywood,intense,0.72,125,0.62,0.70,0.32
+149,Kabhi Khushi Kabhi Gham,Lata Mangeshkar,bollywood,nostalgic,0.45,88,0.65,0.52,0.55
+150,Badtameez Dil,Shalmali Kholgade,bollywood,energetic,0.88,130,0.72,0.88,0.10
+151,DNA,BTS,k-pop,energetic,0.82,148,0.72,0.82,0.05
+152,How You Like That,BLACKPINK,k-pop,intense,0.85,130,0.55,0.80,0.04
+153,Fake Love,BTS,k-pop,melancholic,0.75,130,0.42,0.70,0.05
+154,Spring Day,BTS,k-pop,nostalgic,0.52,110,0.55,0.55,0.22
+155,Lovesick Girls,BLACKPINK,k-pop,melancholic,0.72,125,0.48,0.75,0.05
+156,ETA,NewJeans,k-pop,energetic,0.78,135,0.75,0.82,0.06
+157,1901,Phoenix,indie pop,uplifting,0.78,122,0.82,0.80,0.10
+158,Feels Like We Only Go Backwards,Tame Impala,indie pop,dreamy,0.55,108,0.62,0.68,0.32
+159,Two Weeks,FKA Twigs,indie pop,dreamy,0.52,98,0.58,0.62,0.25
+160,Snowfall,Oneeheart & reidenshi,lofi,dreamy,0.28,88,0.55,0.55,0.82
+161,Beautiful,wun two,lofi,peaceful,0.22,72,0.60,0.48,0.88
+162,Once in a While,Tomppabeats,lofi,nostalgic,0.32,80,0.58,0.55,0.80
+163,Last Last,Burna Boy,afrobeats,melancholic,0.68,105,0.48,0.80,0.15
+164,Essence,Wizkid ft. Tems,afrobeats,romantic,0.62,95,0.78,0.75,0.20
+165,Assurance,Davido,afrobeats,uplifting,0.72,108,0.80,0.82,0.12
+166,Ye,Burna Boy,afrobeats,nostalgic,0.60,92,0.72,0.72,0.25
+167,Ke Star,Focalistic ft. Vigro Deep,afrobeats,energetic,0.85,120,0.75,0.88,0.08
+168,The Girl from Ipanema,Joao Gilberto & Stan Getz,bossa nova,romantic,0.30,130,0.78,0.55,0.88
+169,Corcovado,Joao Gilberto,bossa nova,dreamy,0.22,80,0.72,0.45,0.92
+170,Wave,Tom Jobim,bossa nova,chill,0.28,120,0.70,0.50,0.90
+171,Mas Que Nada,Sergio Mendes & Brasil 66,bossa nova,happy,0.62,104,0.80,0.68,0.72
+172,Stayin' Alive,Bee Gees,disco,happy,0.80,104,0.82,0.88,0.08
+173,I Will Survive,Gloria Gaynor,disco,uplifting,0.82,117,0.88,0.85,0.10
+174,Dancing Queen,ABBA,disco,happy,0.78,101,0.90,0.82,0.12
+175,Hot Stuff,Donna Summer,disco,energetic,0.85,118,0.78,0.88,0.08
+176,Oh Happy Day,Edwin Hawkins Singers,gospel,uplifting,0.72,88,0.90,0.68,0.40
+177,Total Praise,Richard Smallwood,gospel,peaceful,0.45,72,0.85,0.48,0.55
+178,Stomp,Kirk Franklin & God's Property,gospel,energetic,0.85,118,0.88,0.82,0.12
+179,Take Me to the King,Tamela Mann,gospel,uplifting,0.62,80,0.82,0.60,0.38
+180,On & On,Erykah Badu,neo-soul,chill,0.42,88,0.65,0.60,0.45
+181,Untitled (How Does It Feel),D'Angelo,neo-soul,romantic,0.38,78,0.72,0.52,0.52
+182,Made to Love,John Legend,neo-soul,romantic,0.55,100,0.80,0.68,0.30
+183,Golden,Jill Scott,neo-soul,uplifting,0.55,100,0.85,0.65,0.40
+184,While We're Young,Jhene Aiko,neo-soul,romantic,0.38,68,0.70,0.52,0.48
+185,XO Tour Llif3,Lil Uzi Vert,trap,melancholic,0.78,148,0.32,0.72,0.04
+186,Rockstar,Post Malone ft. 21 Savage,trap,moody,0.72,160,0.38,0.68,0.05
+187,Bad and Boujee,Migos ft. Lil Uzi Vert,trap,intense,0.82,130,0.42,0.78,0.03
+188,Mask Off,Future,trap,focused,0.72,150,0.40,0.75,0.02
+189,Money in the Grave,Drake ft. Rick Ross,trap,intense,0.75,100,0.52,0.72,0.05
+190,Gurenge,LiSA,j-pop,intense,0.88,180,0.65,0.72,0.05
+191,Lemon,Kenshi Yonezu,j-pop,melancholic,0.45,90,0.38,0.52,0.35
+192,Idol,YOASOBI,j-pop,energetic,0.92,196,0.78,0.82,0.04
+193,First Love,Hikaru Utada,j-pop,romantic,0.38,88,0.68,0.48,0.52
+194,Pretender,Official HIGE DANdism,j-pop,melancholic,0.52,130,0.45,0.65,0.22
+195,Last Nite,The Strokes,indie rock,nostalgic,0.72,138,0.62,0.72,0.12
+196,R U Mine?,Arctic Monkeys,indie rock,intense,0.82,155,0.48,0.72,0.05
+197,Sex on Fire,Kings of Leon,indie rock,intense,0.80,154,0.52,0.68,0.12
+198,Stolen Dance,Milky Chance,indie rock,chill,0.52,110,0.68,0.60,0.45
+199,Fluorescent Adolescent,Arctic Monkeys,indie rock,energetic,0.75,142,0.65,0.72,0.08
+200,Temperature,Sean Paul,dancehall,energetic,0.88,138,0.80,0.90,0.08
+201,Beautiful Girls,Sean Paul,dancehall,romantic,0.72,102,0.78,0.80,0.15
+202,Pon de Replay,Rihanna,dancehall,energetic,0.82,114,0.78,0.88,0.08
+203,Informer,Snow,dancehall,energetic,0.78,96,0.65,0.82,0.20

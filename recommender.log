@@ -92,3 +92,19 @@
 2026-05-02 22:45:37,674 [INFO] music_recommender: Top results for 'Anuv Jain': ['Sunrise City', 'Midnight Coding', 'Storm Runner', 'Library Rain', 'Gym Hero'], scores=[0.0, 0.0, 0.0, 0.0, 0.0]
 2026-05-02 22:45:37,702 [DEBUG] music_recommender: Generating RAG explanation for query: 'Anuv Jain'
 2026-05-02 22:45:38,797 [INFO] music_recommender: RAG explanation generated (419 chars)
+2026-05-02 22:50:49,738 [INFO] music_recommender: Loaded 92 songs from catalog
+2026-05-02 22:50:49,739 [INFO] music_recommender: User query: 'I want romantic Bollywood songs'
+2026-05-02 22:50:49,773 [DEBUG] music_recommender: Parsing preferences for query: 'I want romantic Bollywood songs'
+2026-05-02 22:50:50,402 [DEBUG] music_recommender: Raw parse response: {"genre": "bollywood", "mood": "romantic", "valence": 0.8}
+2026-05-02 22:50:50,402 [INFO] music_recommender: Parsed preferences: {'genre': 'bollywood', 'mood': 'romantic', 'valence': 0.8}
+2026-05-02 22:50:50,406 [INFO] music_recommender: Top results for 'I want romantic Bollywood songs': ['Kesariya', 'Tum Hi Ho', 'Golden Hour', 'Fly Me to the Moon', 'Thinking Out Loud'], scores=[3.21, 3.14, 2.23, 2.23, 2.23]
+2026-05-02 22:50:50,433 [DEBUG] music_recommender: Generating RAG explanation for query: 'I want romantic Bollywood songs'
+2026-05-02 22:50:51,734 [INFO] music_recommender: RAG explanation generated (583 chars)
+2026-05-02 22:51:06,186 [INFO] music_recommender: Loaded 92 songs from catalog
+2026-05-02 22:51:07,846 [INFO] music_recommender: User query: 'Sad'
+2026-05-02 22:51:07,909 [DEBUG] music_recommender: Parsing preferences for query: 'Sad'
+2026-05-02 22:51:08,629 [DEBUG] music_recommender: Raw parse response: {"valence": 0.1, "mood": "melancholic"}
+2026-05-02 22:51:08,630 [INFO] music_recommender: Parsed preferences: {'valence': 0.1, 'mood': 'melancholic'}
+2026-05-02 22:51:08,634 [INFO] music_recommender: Top results for 'Sad': ['Moonlight Sonata', 'The Sound of Silence', 'Rainy Season', 'The Thrill Is Gone', 'Somebody That I Used to Know'], scores=[2.16, 2.11, 2.08, 2.04, 1.99]
+2026-05-02 22:51:08,670 [DEBUG] music_recommender: Generating RAG explanation for query: 'Sad'
+2026-05-02 22:51:10,165 [INFO] music_recommender: RAG explanation generated (642 chars)
